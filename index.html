@@ -18,6 +18,12 @@
             animation: backgroundAnimation 15s ease infinite;
             color: #fff;
             overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode {
+            background: radial-gradient(circle at top, #1e1e1e, #3a3a3a, #1c1c1c);
+            color: #ccc;
         }
 
         @keyframes backgroundAnimation {
@@ -35,6 +41,11 @@
             padding: 100px 0;
             text-align: center;
             color: #fff;
+            transition: background 0.3s ease;
+        }
+
+        header.dark-mode {
+            background: linear-gradient(to right, #1a1a1a, #2e2e2e);
         }
 
         header h1 {
@@ -61,6 +72,11 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        nav.dark-mode {
+            background-color: rgba(0, 0, 0, 0.9);
         }
 
         nav a {
@@ -85,6 +101,12 @@
             box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
             border-radius: 15px;
             backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container.dark-mode {
+            background-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
         }
 
         .about-me {
@@ -270,6 +292,55 @@
         .fade-in.in-view {
             opacity: 1;
         }
+
+        .toggle-effects {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ff7e5f;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 700;
+            z-index: 1001;
+            /* Đảm bảo nút hiển thị trên các phần tử khác */
+        }
+
+        .toggle-effects.active {
+            background-color: #feb47b;
+        }
+
+        .no-effects .fade-in {
+            opacity: 1 !important;
+            transition: none !important;
+        }
+
+        .no-effects {
+            background: radial-gradient(circle at top, #020024, #090979, #00d4ff) !important;
+            background-size: 100% 100% !important;
+            animation: none !important;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        #theme-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2em;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #theme-button.dark-mode {
+            color: #ccc;
+        }
     </style>
 </head>
 
@@ -277,6 +348,16 @@
     <header>
         <h1>Tân 7 Cú</h1>
         <p>Web developers basic.</p>
+
+        <div id="toggle-effects" class="toggle-effects">
+            Bật/Tắt Hiệu ứng
+        </div>
+
+        <div class="theme-toggle">
+            <button id="theme-button">🌙</button>
+        </div>
+
+
     </header>
     <nav>
         <a href="#about">Giới thiệu</a>
@@ -358,6 +439,59 @@
                     element.classList.add('in-view');
                 } else {
                     element.classList.remove('in-view');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('toggle-effects');
+            let effectsEnabled = true;
+
+            toggleButton.addEventListener('click', () => {
+                effectsEnabled = !effectsEnabled;
+                toggleButton.classList.toggle('active', effectsEnabled);
+
+                document.body.classList.toggle('no-effects', !effectsEnabled);
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const effectButton = document.getElementById('effect-button');
+            const themeButton = document.getElementById('theme-button');
+            const body = document.body;
+            const effectStyle = document.getElementById('effect-style');
+
+            // Load saved theme and effect from localStorage
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                themeButton.classList.add('dark-mode');
+                themeButton.innerHTML = '🌕';
+            }
+
+            if (localStorage.getItem('effects') === 'off') {
+                effectStyle.disabled = true;
+            }
+
+            themeButton.addEventListener('click', () => {
+                if (body.classList.contains('dark-mode')) {
+                    body.classList.remove('dark-mode');
+                    themeButton.classList.remove('dark-mode');
+                    themeButton.innerHTML = '🌙';
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    body.classList.add('dark-mode');
+                    themeButton.classList.add('dark-mode');
+                    themeButton.innerHTML = '🌕';
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            effectButton.addEventListener('click', () => {
+                if (effectStyle.disabled) {
+                    effectStyle.disabled = false;
+                    localStorage.setItem('effects', 'on');
+                } else {
+                    effectStyle.disabled = true;
+                    localStorage.setItem('effects', 'off');
                 }
             });
         });
