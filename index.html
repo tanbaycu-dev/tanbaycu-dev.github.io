@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Giới thiệu về Tân 7 Cú - Trang giới thiệu nho nhỏ.">
     <meta name="keywords" content="Tân 7 Cú">
     <meta name="author" content="Tân 7 Cú">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Tân 7 Cú - Đồng 7 Tấn</title>
     <style>
         body {
@@ -20,19 +21,22 @@
             overflow-x: hidden;
             transition: background 0.3s ease, color 0.3s ease;
         }
-        
+
         body.dark-mode {
             background: radial-gradient(circle at top, #1e1e1e, #3a3a3a, #1c1c1c);
             color: #ccc;
         }
+
         @keyframes backgroundAnimation {
             0% {
                 background-position: 0% 0%;
             }
+
             100% {
                 background-position: 100% 100%;
             }
         }
+
         header {
             background: linear-gradient(to right, #141e30, #243b55);
             padding: 100px 0;
@@ -40,10 +44,11 @@
             color: #fff;
             transition: background 0.3s ease;
         }
-        
+
         header.dark-mode {
             background: linear-gradient(to right, #1a1a1a, #2e2e2e);
         }
+
         header h1 {
             margin: 0;
             font-size: 4em;
@@ -53,11 +58,13 @@
             -webkit-background-clip: text;
             color: transparent;
         }
+
         header p {
             font-size: 1.5em;
             margin-top: 10px;
             font-weight: 300;
         }
+
         nav {
             background-color: rgba(0, 0, 0, 0.7);
             color: #fff;
@@ -68,10 +75,11 @@
             z-index: 1000;
             transition: background-color 0.3s ease;
         }
-        
+
         nav.dark-mode {
             background-color: rgba(0, 0, 0, 0.9);
         }
+
         nav a {
             color: #fff;
             margin: 0 30px;
@@ -80,10 +88,12 @@
             transition: color 0.3s ease, transform 0.3s ease;
             font-size: 1.2em;
         }
+
         nav a:hover {
             color: #feb47b;
             transform: scale(1.1);
         }
+
         .container {
             width: 85%;
             margin: 50px auto;
@@ -94,36 +104,42 @@
             backdrop-filter: blur(10px);
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .container.dark-mode {
             background-color: rgba(0, 0, 0, 0.2);
             box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
         }
+
         .about-me {
             margin-top: 20px;
             text-align: center;
         }
+
         .about-me h2 {
             color: #ff7e5f;
             font-size: 3em;
             margin-bottom: 20px;
             font-weight: 900;
         }
+
         .about-me p {
             font-size: 1.2em;
             line-height: 1.8;
             color: #f5f5f5;
         }
+
         .skills {
             margin-top: 40px;
             text-align: center;
         }
+
         .skills h2 {
             color: #feb47b;
             font-size: 3em;
             margin-bottom: 20px;
             font-weight: 900;
         }
+
         .skills ul {
             display: flex;
             flex-wrap: wrap;
@@ -131,6 +147,7 @@
             padding: 0;
             justify-content: space-around;
         }
+
         .skills ul li {
             background-color: rgba(255, 255, 255, 0.15);
             color: #fff;
@@ -143,21 +160,25 @@
             font-weight: 700;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .skills ul li:hover {
             transform: translateY(-15px) scale(1.1);
             background: linear-gradient(to right, #ff7e5f, #feb47b);
             box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
         }
+
         .portfolio {
             margin-top: 40px;
             text-align: center;
         }
+
         .portfolio h2 {
             color: #ff7e5f;
             font-size: 3em;
             margin-bottom: 20px;
             font-weight: 900;
         }
+
         .portfolio .project {
             margin-bottom: 40px;
             padding: 20px;
@@ -167,21 +188,25 @@
             border: 2px solid transparent;
             transition: border 0.3s ease, box-shadow 0.3s ease;
         }
+
         .portfolio .project:hover {
             border: 2px solid #ff7e5f;
             box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
         }
+
         .portfolio .project h3 {
             margin: 0;
             font-size: 2em;
             color: #feb47b;
             font-weight: 700;
         }
+
         .portfolio .project p {
             margin: 10px 0;
             line-height: 1.6;
             color: #f5f5f5;
         }
+
         .contact {
             margin-top: 50px;
             padding: 40px;
@@ -190,25 +215,30 @@
             border-radius: 15px;
             text-align: center;
         }
+
         .contact h2 {
             font-size: 3em;
             margin-bottom: 20px;
             font-weight: 900;
         }
+
         .contact p {
             margin: 15px 0;
             font-size: 1.2em;
             font-weight: 300;
         }
+
         .contact a {
             color: #ff7e5f;
             font-weight: 700;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         .contact a:hover {
             color: #feb47b;
         }
+
         footer {
             background-color: rgba(0, 0, 0, 0.9);
             color: #fff;
@@ -217,22 +247,27 @@
             margin-top: 20px;
             border-top: 2px solid #ff7e5f;
         }
+
         footer p {
             margin: 0;
             font-size: 1em;
         }
+
         @media (max-width: 768px) {
             .container {
                 width: 95%;
             }
+
             nav a {
                 display: block;
                 margin: 10px 0;
             }
+
             .skills ul li {
                 width: 100%;
             }
         }
+
         .project-link {
             display: inline-block;
             margin-top: 10px;
@@ -244,14 +279,17 @@
             font-weight: 700;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         .project-link:hover {
             background-color: #feb47b;
             transform: scale(1.05);
         }
+
         .fade-in {
             opacity: 0;
             transition: opacity 0.5s ease-in;
         }
+
         .fade-in.in-view {
             opacity: 1;
         }
@@ -266,9 +304,10 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: 700;
-            z-index: 1001; /* Đảm bảo nút hiển thị trên các phần tử khác */
+            z-index: 1001;
+            /* Đảm bảo nút hiển thị trên các phần tử khác */
         }
-        
+
         .toggle-effects.active {
             background-color: #feb47b;
         }
@@ -277,19 +316,20 @@
             opacity: 1 !important;
             transition: none !important;
         }
-        
+
         .no-effects {
             background: radial-gradient(circle at top, #020024, #090979, #00d4ff) !important;
             background-size: 100% 100% !important;
             animation: none !important;
         }
+
         .theme-toggle {
             position: fixed;
             top: 20px;
             left: 20px;
             z-index: 1000;
         }
-        
+
         #theme-button {
             background: none;
             border: none;
@@ -298,27 +338,98 @@
             cursor: pointer;
             transition: color 0.3s ease;
         }
-        
+
         #theme-button.dark-mode {
             color: #ccc;
         }
-        
+
+        #loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #000;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+        }
+
+        .custom-button {
+            background-color: #6200ea;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-button:hover {
+            background-color: #3700b3;
+            transform: scale(1.05);
+        }
+
+        .custom-button:active {
+            background-color: #3700b3;
+            transform: scale(1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(98, 0, 234, 0.5);
+        }
     </style>
 </head>
+<div id="clock"></div>
+
 <body>
     <header>
         <h1>Tân 7 Cú</h1>
         <p>Web developers basic.</p>
-        
+
         <div id="toggle-effects" class="toggle-effects">
             Bật/Tắt Hiệu ứng
         </div>
-        
+
         <div class="theme-toggle">
             <button id="theme-button">🌙</button>
         </div>
-        
-        
+
+
     </header>
     <nav>
         <a href="#about">Giới thiệu</a>
@@ -326,11 +437,20 @@
         <a href="#portfolio">Dự án</a>
         <a href="#contact">Liên hệ</a>
     </nav>
+
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
     <div class="container">
         <section id="about" class="about-me fade-in">
             <h2>Về tôi</h2>
-            <p>Tôi là Tân 7 Cú, tôi khá đam với việc lập trình và phát triển web đơn giản, với những kiến thức có sẵn trên mạng và tích hợp với các trí tuệ nhân tạo, dường như việc tạo ra 1 web cá nhân là vô cùng đơn giản.</p>
-            <p>Tôi luôn hướng tới việc phát triển bản thân qua các bài học lập trình trên mạng, tích lũy kiến thức và xây dựng cho mình 1 trang web cá nhân, 1 dự án game planform đơn giản hoặc có thể là dự án phát triển thiết kế đồ họa, giao diện người dùng UI/UX.</p>
+            <p>Tôi là Tân 7 Cú, tôi khá đam với việc lập trình và phát triển web đơn giản, với những kiến thức có sẵn
+                trên mạng và tích hợp với các trí tuệ nhân tạo, dường như việc tạo ra 1 web cá nhân là vô cùng đơn giản.
+            </p>
+            <p>Tôi luôn hướng tới việc phát triển bản thân qua các bài học lập trình trên mạng, tích lũy kiến thức và
+                xây dựng cho mình 1 trang web cá nhân, 1 dự án game planform đơn giản hoặc có thể là dự án phát triển
+                thiết kế đồ họa, giao diện người dùng UI/UX.</p>
         </section>
         <section id="skills" class="skills fade-in">
             <h2>Kỹ năng</h2>
@@ -347,37 +467,59 @@
             <h2>Dự án</h2>
             <div class="project">
                 <h3>Dự án PythonCodeFormatter</h3>
-                <p>PythonCodeFormatter là dự án tích hợp việc sử dụng mã nguồn kết hợp với dependences cho quá trình làm đẹp mã code(Python), với việc thiết kế giao diện người dùng thân thiện mang lại cảm giác dễ chịu, tích hợp các hàm log để ghi nhận các lỗi phát sinh. PythonCodeFormatter là lựa chọn ưu tiên cho việc làm đẹp code Python chuẩn với sự hổ trợ từ thư viện pep8.</p>
+                <p>PythonCodeFormatter là dự án tích hợp việc sử dụng mã nguồn kết hợp với dependences cho quá trình làm
+                    đẹp mã code(Python), với việc thiết kế giao diện người dùng thân thiện mang lại cảm giác dễ chịu,
+                    tích hợp các hàm log để ghi nhận các lỗi phát sinh. PythonCodeFormatter là lựa chọn ưu tiên cho việc
+                    làm đẹp code Python chuẩn với sự hổ trợ từ thư viện pep8.</p>
                 <a href="https://github.com/tanbaycu/python-code-formatter" class="project-link">Xem tại đây</a>
             </div>
             <div class="project">
                 <h3>Dự án DownloadVideoFromYoutube</h3>
-                <p>DownloadVideoFromYoutube là chương trình cho phép người dùng đưa đầu vào của 1 URL video youtube bất kỳ(hoặc 1 playlist), dựa vào thư viện FFmpeg chương trình sẽ đưa ra các lựa chọn cho video youtube, người dùng có thể tải về video(mp4) hoặc audio(mp3) qua các lựa chọn có sẵn dựa vào các ID. Nếu muốn chương trình trở nên cá nhân hóa bạn có thể chỉnh lại sao cho phù hợp nhất với mình. </p>
+                <p>DownloadVideoFromYoutube là chương trình cho phép người dùng đưa đầu vào của 1 URL video youtube bất
+                    kỳ(hoặc 1 playlist), dựa vào thư viện FFmpeg chương trình sẽ đưa ra các lựa chọn cho video youtube,
+                    người dùng có thể tải về video(mp4) hoặc audio(mp3) qua các lựa chọn có sẵn dựa vào các ID. Nếu muốn
+                    chương trình trở nên cá nhân hóa bạn có thể chỉnh lại sao cho phù hợp nhất với mình. </p>
                 <a href="https://github.com/tanbaycu/download-video-youtube" class="project-link">Xem tại đây</a>
             </div>
             <div class="project">
                 <h3>Dự án Botchat Quản lý tài chính(Telegram)</h3>
-                <p>Finance-Manager-Bot là bot Telegram để quản lý tài chính cá nhân. Nó giúp người dùng theo dõi chi phí, ghi lại thu nhập, đặt mục tiêu tiết kiệm và tạo báo cáo và thống kê tài chính. Quản lý tài chính của bạn một cách dễ dàng thông qua Telegram với các cập nhật theo thời gian thực. Cần cài đặt các thư viện cần thiết để bot hoạt động bình thường, thay thế TOKEN của bạn vào phần "Your-Bot-Token-Here" để đảm bảo botchat này hoàn toàn được bạn quản lý.</p>
+                <p>Finance-Manager-Bot là bot Telegram để quản lý tài chính cá nhân. Nó giúp người dùng theo dõi chi
+                    phí, ghi lại thu nhập, đặt mục tiêu tiết kiệm và tạo báo cáo và thống kê tài chính. Quản lý tài
+                    chính của bạn một cách dễ dàng thông qua Telegram với các cập nhật theo thời gian thực. Cần cài đặt
+                    các thư viện cần thiết để bot hoạt động bình thường, thay thế TOKEN của bạn vào phần
+                    "Your-Bot-Token-Here" để đảm bảo botchat này hoàn toàn được bạn quản lý.</p>
                 <a href="https://github.com/tanbaycu/finance-manager-bot" class="project-link">Xem tại đây</a>
             </div>
         </section>
-        
+
+        <button class="custom-button" onclick="showNotification()">Xem thêm</button>
+
+
         <section id="contact" class="contact fade-in">
             <h2>Liên hệ</h2>
-            <p>Liên hệ hợp tác và chia sẻ kinh nghiệm : <a href="mailto:tranminhtan4953@gmail.com">tranminhtan4953@gmail.com</a> hoặc gọi số điện thoại: <a href="tel:+84835117727">+84 835 117 727</a>.</p>
+            <p>Liên hệ hợp tác và chia sẻ kinh nghiệm : <a
+                    href="mailto:tranminhtan4953@gmail.com">tranminhtan4953@gmail.com</a> hoặc gọi số điện thoại: <a
+                    href="tel:+84835117727">+84 835 117 727</a>.</p>
             <p>Kết nối với tôi trên các mạng xã hội:</p>
             <p>
-                <a href="https://www.facebook.com/tan.hurican/">Facebook</a> | 
-                <a href="https://github.com/tanbaycu">GitHub</a> | 
+                <a href="https://www.facebook.com/tan.hurican/">Facebook</a> |
+                <a href="https://github.com/tanbaycu">GitHub</a> |
                 <a href="https://t.me/tanbaycu">Telegram</a>
             </p>
         </section>
     </div>
+
+    <button id="scrollTopBtn">↑</button>
+
     <footer>
         <p>&copy; 2024 Tân 7 Cú. Mọi quyền được bảo lưu.</p>
+
+
     </footer>
+    <div id="content">Web tự động làm mới sau mỗi 30 giây.</div>
+
     <script>
-        document.addEventListener('scroll', function() {
+        document.addEventListener('scroll', function () {
             document.querySelectorAll('.fade-in').forEach(element => {
                 const rect = element.getBoundingClientRect();
                 if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
@@ -391,11 +533,11 @@
         document.addEventListener('DOMContentLoaded', () => {
             const toggleButton = document.getElementById('toggle-effects');
             let effectsEnabled = true;
-    
+
             toggleButton.addEventListener('click', () => {
                 effectsEnabled = !effectsEnabled;
                 toggleButton.classList.toggle('active', effectsEnabled);
-    
+
                 document.body.classList.toggle('no-effects', !effectsEnabled);
             });
         });
@@ -404,18 +546,18 @@
             const themeButton = document.getElementById('theme-button');
             const body = document.body;
             const effectStyle = document.getElementById('effect-style');
-            
+
             // Load saved theme and effect from localStorage
             if (localStorage.getItem('theme') === 'dark') {
                 body.classList.add('dark-mode');
                 themeButton.classList.add('dark-mode');
                 themeButton.innerHTML = '🌕';
             }
-    
+
             if (localStorage.getItem('effects') === 'off') {
                 effectStyle.disabled = true;
             }
-    
+
             themeButton.addEventListener('click', () => {
                 if (body.classList.contains('dark-mode')) {
                     body.classList.remove('dark-mode');
@@ -429,7 +571,7 @@
                     localStorage.setItem('theme', 'dark');
                 }
             });
-    
+
             effectButton.addEventListener('click', () => {
                 if (effectStyle.disabled) {
                     effectStyle.disabled = false;
@@ -440,6 +582,55 @@
                 }
             });
         });
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('load', function () {
+            document.getElementById('loader').style.display = 'none';
+        });
+
+        var scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        scrollTopBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        setInterval(() => {
+            document.getElementById('content').innerText = `Web tự động reset sao mỗi 30 giây: ${new Date().toLocaleTimeString()}`;
+        }, 30000);
+
+        setTimeout(function () {
+            location.reload();
+        }, 30000);
+
+
+        function updateClock() {
+            document.getElementById('clock').innerText = new Date().toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        function showNotification() {
+            alert("Hãy truy cập đến đường link: github.com/tanbaycu để biết thêm 1 số dự án đơn giản khác.!");
+        }
+
+
     </script>
 </body>
+
 </html>
