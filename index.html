@@ -9,6 +9,13 @@
     <meta name="author" content="Tân 7 Cú">
     <title>Tân 7 Cú - Đồng 7 Tấn</title>
     <style>
+        /* Đặt toàn cục để tạo responsive */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -38,14 +45,11 @@
 
         header {
             background: linear-gradient(to right, #141e30, #243b55);
-            padding: 100px 0;
+            padding: 100px 20px;
+            /* Giảm padding */
             text-align: center;
             color: #fff;
             transition: background 0.3s ease;
-        }
-
-        header.dark-mode {
-            background: linear-gradient(to right, #1a1a1a, #2e2e2e);
         }
 
         header h1 {
@@ -57,6 +61,12 @@
             -webkit-background-clip: text;
             color: transparent;
         }
+
+        header.dark-mode {
+            background: linear-gradient(to right, #1a1a1a, #2e2e2e);
+        }
+
+
 
         header p {
             font-size: 1.5em;
@@ -75,18 +85,22 @@
             transition: background-color 0.3s ease;
         }
 
-        nav.dark-mode {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
         nav a {
             color: #fff;
-            margin: 0 30px;
+            margin: 0 15px;
+            /* Giảm margin */
             text-decoration: none;
             font-weight: 700;
             transition: color 0.3s ease, transform 0.3s ease;
             font-size: 1.2em;
+            display: inline-block;
         }
+
+        nav.dark-mode {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+
 
         nav a:hover {
             color: #feb47b;
@@ -102,7 +116,18 @@
             border-radius: 15px;
             backdrop-filter: blur(10px);
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
+
+        .about-me h2,
+        .skills h2,
+        .portfolio h2,
+        .contact h2 {
+            font-size: 2.5em;
+        }
+
 
         .container.dark-mode {
             background-color: rgba(0, 0, 0, 0.2);
@@ -238,6 +263,7 @@
             color: #feb47b;
         }
 
+        /* Điều chỉnh lại cho phần footer */
         footer {
             background-color: rgba(0, 0, 0, 0.9);
             color: #fff;
@@ -252,18 +278,9 @@
             font-size: 1em;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-
-            .skills ul li {
-                width: 100%;
+        @media (max-width: 576px) {
+            footer p {
+                font-size: 0.8em;
             }
         }
 
@@ -384,36 +401,65 @@
             z-index: 1000;
         }
 
+        /* Định dạng nút tùy chỉnh */
         .custom-button {
-            background-color: #6200ea;
+            display: inline-block;
+            background-color: #007bff;
+            /* Màu nền */
             color: #fff;
-            border: none;
-            border-radius: 8px;
+            /* Màu chữ */
             padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Khoảng cách bên trong */
+            border: none;
+            /* Loại bỏ viền mặc định */
+            border-radius: 5px;
+            /* Bo tròn góc */
+            font-size: 1rem;
+            /* Kích thước chữ */
+            text-align: center;
+            /* Căn giữa văn bản */
+            text-decoration: none;
+            /* Loại bỏ gạch chân */
+            transition: background-color 0.3s;
+            /* Hiệu ứng chuyển màu nền khi hover */
         }
 
+        /* Hiệu ứng khi hover */
         .custom-button:hover {
-            background-color: #3700b3;
-            transform: scale(1.05);
+            background-color: #0056b3;
+            /* Màu nền khi hover */
         }
 
-        .custom-button:active {
-            background-color: #3700b3;
-            transform: scale(1);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
+        /* Hiệu ứng khi focus */
         .custom-button:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(98, 0, 234, 0.5);
+            outline: 2px solid #0056b3;
+            /* Viền khi nút được focus */
+            outline-offset: 2px;
+            /* Khoảng cách viền */
         }
 
-        /* Điều chỉnh cơ bản cho thiết bị di động */
+        /* Đảm bảo nút có kích thước phù hợp trên các thiết bị nhỏ hơn */
+        @media (max-width: 768px) {
+            .custom-button {
+                font-size: 0.9rem;
+                /* Kích thước chữ nhỏ hơn trên màn hình nhỏ */
+                padding: 8px 16px;
+                /* Khoảng cách bên trong nhỏ hơn */
+            }
+        }
+
+
+
+
+
+
+
+        /* Điều chỉnh cho các kích thước màn hình khác nhau */
         @media (max-width: 1200px) {
+            .skills ul li {
+                width: 45%;
+            }
+
             header h1 {
                 font-size: 3em;
             }
@@ -421,9 +467,17 @@
             header p {
                 font-size: 1.2em;
             }
+
+            nav a {
+                font-size: 1.1em;
+            }
         }
 
         @media (max-width: 992px) {
+            .skills ul li {
+                width: 48%;
+            }
+
             header h1 {
                 font-size: 2.5em;
             }
@@ -431,17 +485,14 @@
             header p {
                 font-size: 1em;
             }
-
-            nav a {
-                font-size: 1em;
-            }
-
-            .skills ul li {
-                width: 45%;
-            }
         }
 
         @media (max-width: 768px) {
+            .skills ul li {
+                width: 100%;
+                margin: 10px 0;
+            }
+
             header h1 {
                 font-size: 2em;
             }
@@ -460,20 +511,8 @@
                 display: block;
             }
 
-            .skills ul li {
-                width: 100%;
-            }
-
-            .portfolio .project {
-                padding: 15px;
-            }
-
-            .contact {
-                padding: 30px;
-            }
-
-            .custom-button {
-                font-size: 14px;
+            .container {
+                width: 95%;
             }
         }
 
@@ -487,7 +526,7 @@
             }
 
             .container {
-                width: 95%;
+                width: 100%;
                 padding: 10px;
             }
 
@@ -506,17 +545,76 @@
             .custom-button {
                 font-size: 12px;
             }
+        }
 
-            #theme-button {
-                font-size: 1.5em;
+        /* Reset CSS cơ bản */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Định dạng tiêu đề */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Định dạng container chính */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Định dạng phần tử cột */
+        .column {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex: 1 1 300px;
+            /* Đảm bảo cột co giãn theo kích thước màn hình */
+            max-width: 100%;
+            /* Không vượt quá 100% chiều rộng container */
+        }
+
+        /* Media Queries cho các thiết bị nhỏ hơn */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
             }
 
-            #scrollTopBtn {
-                padding: 8px 12px;
+            p {
+                font-size: 1rem;
             }
 
-            footer p {
-                font-size: 0.8em;
+            .container {
+                padding: 10px;
+            }
+
+            .column {
+                flex: 1 1 100%;
+                /* Cột sẽ chiếm toàn bộ chiều rộng màn hình nhỏ */
+                margin-bottom: 20px;
+                /* Khoảng cách giữa các cột */
             }
         }
     </style>
