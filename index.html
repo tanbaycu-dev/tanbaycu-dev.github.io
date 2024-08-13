@@ -7,7 +7,6 @@
     <meta name="description" content="Giới thiệu về Tân 7 Cú - Trang giới thiệu nho nhỏ.">
     <meta name="keywords" content="Tân 7 Cú">
     <meta name="author" content="Tân 7 Cú">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Tân 7 Cú - Đồng 7 Tấn</title>
     <style>
         body {
@@ -411,6 +410,114 @@
         .custom-button:focus {
             outline: none;
             box-shadow: 0 0 0 3px rgba(98, 0, 234, 0.5);
+        }
+
+        /* Điều chỉnh cơ bản cho thiết bị di động */
+        @media (max-width: 1200px) {
+            header h1 {
+                font-size: 3em;
+            }
+
+            header p {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 992px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            nav a {
+                font-size: 1em;
+            }
+
+            .skills ul li {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            nav {
+                padding: 15px 0;
+            }
+
+            nav a {
+                font-size: 1em;
+                margin: 10px 0;
+                display: block;
+            }
+
+            .skills ul li {
+                width: 100%;
+            }
+
+            .portfolio .project {
+                padding: 15px;
+            }
+
+            .contact {
+                padding: 30px;
+            }
+
+            .custom-button {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 0.8em;
+            }
+
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            .skills ul li {
+                padding: 15px;
+            }
+
+            .portfolio .project {
+                padding: 10px;
+            }
+
+            .contact {
+                padding: 20px;
+            }
+
+            .custom-button {
+                font-size: 12px;
+            }
+
+            #theme-button {
+                font-size: 1.5em;
+            }
+
+            #scrollTopBtn {
+                padding: 8px 12px;
+            }
+
+            footer p {
+                font-size: 0.8em;
+            }
         }
     </style>
 </head>
